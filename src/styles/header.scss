@@ -1,6 +1,4 @@
-$primary-color: #00acdc;
-$nav-color: #060b35;
-$title-hover: #34568b;
+@import './vars';
 
 .nav {
   display: flex;
@@ -57,10 +55,6 @@ $title-hover: #34568b;
     color: $primary-color;
   }
 
-  &__2 {
-    color: black;
-  }
-
   &__link.is-active {
     color: $primary-color;
   }
@@ -82,5 +76,6 @@ $title-hover: #34568b;
 
   &__link:hover {
     color: $primary-color;
+    transition: color 0.3s;
   }
 }
