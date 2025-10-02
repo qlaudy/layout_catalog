@@ -3,21 +3,21 @@
 .catalog {
   display: grid;
   justify-content: center;
-  gap: 48px 46px;
-  grid-template-columns: 1fr;
-  padding: 50px 40px;
+  gap: $grid-gap-row $grid-gap-column;
+  grid-template-columns: repeat(1, $card-width);
+  padding: $catalog-padding-vertical $catalog-padding-horizontal;
   font-family: $font-family-main;
 
-  @media (min-width: 488px) {
-    grid-template-columns: repeat(2, 200px);
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: repeat(2, $card-width);
   }
 
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(3, 200px);
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(3, $card-width);
   }
 
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(4, 200px);
+  @media (min-width: $breakpoint-lg) {
+    grid-template-columns: repeat(4, $card-width);
   }
 }
 
@@ -27,7 +27,7 @@
   box-sizing: border-box;
   width: $card-width;
   height: 408px;
-  transition: transform 0.3s;
+  transition: transform $transition-time.3s;
 
   &:hover {
     transform: scale(1.2);
@@ -39,7 +39,7 @@
     line-height: 18px;
     margin-top: 40px;
     margin-left: 17px;
-    transition: color 0.3s;
+    transition: color $transition-time.3s;
   }
 
   &:hover .card__title {
@@ -85,10 +85,10 @@
     font-weight: 700;
     border-radius: 5px;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all $transition-time.3s;
 
     &:hover {
-      background-color: #fff;
+      background-color: $white;
       color: $primary-color;
       text-decoration: none;
     }

@@ -1,10 +1,7 @@
-@import './vars';
-
 .nav {
   display: flex;
-  font-family: Roboto, sans-serif;
+  font-family: $font-family-main;
   font-weight: 500;
-  font-style: normal;
   align-items: center;
   justify-content: space-between;
 
@@ -12,8 +9,6 @@
     display: flex;
     width: 40px;
     height: 40px;
-    align-items: center;
-    justify-content: center;
     margin-left: 50px;
   }
 
@@ -21,12 +16,11 @@
     display: flex;
     align-items: center;
     list-style: none;
-    margin: 0;
+    margin: 0 50px 0 0;
     padding: 0;
-    margin-right: 50px;
   }
 
-  &__li {
+  &__item {
     margin: 20px;
   }
 
@@ -40,42 +34,31 @@
     font-size: 12px;
     height: 15px;
     color: $nav-color;
-  }
 
-  &__list:hover,
-  &__list:active,
-  &__list:focus,
-  &__list:visited {
+    &:hover,
+    &:focus,
+    &:active {
+      color: $primary-color;
+      transition: color $transition-time;
+      text-decoration: none;
+    }
+
+    &.is-active {
+      color: $primary-color;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -18.5px;
+        height: 4px;
+        background: $primary-color;
+        border-radius: 8px;
+      }
+    }
+  }
+  &_link-blue {
     color: $primary-color;
-    text-decoration: none;
-    outline: none;
-  }
-
-  &__1 {
-    color: $primary-color;
-  }
-
-  &__link.is-active {
-    color: $primary-color;
-  }
-
-  &__link.is-active::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -18.5px;
-    height: 4px;
-    background: $primary-color;
-    border-radius: 8px;
-  }
-
-  &_list:hover {
-    color: $primary-color;
-  }
-
-  &__link:hover {
-    color: $primary-color;
-    transition: color 0.3s;
   }
 }
